@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FC 27 Ultimate Team — HARDCORE — Mode Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pitch:#0b1d14;      /* deep turf */
+  --pitch-2:#0f2a1c;
+  --chalk:#e8eee9;      /* line marking white */
+  --bronze:#8a5a2b;
+  --silver:#b7bfc6;
+  --gold:#d8b44a;
+  --alert:#e5473f;      /* card red */
+  --muted:#7f9186;
+  --rule:rgba(232,238,233,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--pitch);color:var(--chalk);
+  font-family:Inter,system-ui,sans-serif;line-height:1.6;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 60px,transparent 60px 120px);
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0}
+.eyebrow{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+
+/* HERO */
+header{border-bottom:1px solid var(--rule);padding:64px 0 48px;position:relative;overflow:hidden}
+header:before{content:"";position:absolute;inset:-40% -10% auto auto;width:520px;height:520px;border:1px solid var(--rule);border-radius:50%}
+h1{font-size:clamp(52px,10vw,116px);font-weight:700;line-height:.88}
+h1 .sub{display:block;font-size:clamp(14px,2.2vw,22px);font-weight:400;color:var(--gold);letter-spacing:.34em;margin-bottom:14px}
+.tagline{max-width:620px;margin-top:26px;font-size:19px;color:#cfd8d2}
+.tagline b{color:var(--gold);font-weight:700}
+.meta{margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+h2{font-size:30px;font-weight:600;margin-bottom:8px}
+h2 .num{color:var(--gold);font-size:15px;vertical-align:super;margin-right:10px;font-family:'Roboto Mono',monospace}
+.lede{color:var(--muted);max-width:660px;margin-bottom:28px}
+
+/* PROBLEM */
+.problem{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.problem div{background:var(--pitch-2);padding:24px}
+.problem h3{font-size:15px;color:var(--alert);margin-bottom:8px;font-weight:600}
+.problem p{margin:0;font-size:14px;color:#b6c3bb}
+
+/* SIGNATURE: pack table */
+.packs{width:100%;border-collapse:collapse;font-size:14px}
+.packs th{text-align:left;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;padding:12px 14px;border-bottom:1px solid var(--rule)}
+.packs td{padding:14px;border-bottom:1px solid var(--rule);vertical-align:top}
+.packs tr td:first-child{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em}
+.tier{display:inline-block;width:8px;height:8px;margin-right:9px;transform:rotate(45deg)}
+.t-b{background:var(--bronze)}.t-s{background:var(--silver)}.t-g{background:var(--gold)}
+.no{color:var(--alert);font-family:'Roboto Mono',monospace;font-size:12px}
+
+/* CURVE */
+.curve{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.wk{background:var(--pitch-2);padding:22px 18px}
+.wk .eyebrow{color:var(--gold);margin-bottom:12px}
+.wk ul{margin:0;padding-left:16px;font-size:13.5px;color:#b6c3bb}
+.wk li{margin-bottom:7px}
+.bar{height:3px;background:var(--gold);margin-bottom:16px}
+.w1 .bar{width:12%}.w2 .bar{width:34%}.w3 .bar{width:62%}.w4 .bar{width:100%}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.pillar{border-left:2px solid var(--gold);padding-left:18px}
+.pillar h3{font-size:17px;margin-bottom:8px}
+.pillar p{margin:0;font-size:14.5px;color:#b6c3bb}
+
+/* PULLQUOTE */
+.pull{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:clamp(22px,3.6vw,38px);line-height:1.2;color:var(--chalk);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:32px 0;margin:0}
+.pull span{color:var(--gold)}
+
+/* BUSINESS */
+.biz{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.biz div{background:var(--pitch-2);padding:24px}
+.biz h3{font-size:14px;font-weight:600;margin-bottom:8px;color:var(--gold)}
+.biz p{margin:0;font-size:14px;color:#b6c3bb}
+
+footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* SQUAD + MARKET MOCKUPS */
+.pitchwrap{border:1px solid var(--rule);background:var(--pitch-2)}
+.pitchhead,.pitchfoot,.mkthead,.mktfoot{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 16px;display:flex;justify-content:space-between;gap:16px}
+.pitchhead{border-bottom:1px solid var(--rule)}
+.pitchfoot,.mktfoot{border-top:1px solid var(--rule);text-transform:none;letter-spacing:.02em;font-size:11.5px;display:block}
+.fpitch{padding:26px 16px;background:
+  repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 34px,transparent 34px 68px)}
+.row{display:flex;justify-content:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.row:last-child{margin-bottom:0}
+.pc{width:88px;padding:10px 6px;text-align:center;border:1px solid var(--rule);background:rgba(0,0,0,.25);position:relative}
+.pc b{display:block;font-family:Oswald,sans-serif;font-size:24px;font-weight:600;line-height:1}
+.pc span{display:block;font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.14em;margin:3px 0 5px;color:var(--muted)}
+.pc i{display:block;font-style:normal;font-size:9.5px;letter-spacing:.04em;color:var(--muted)}
+.pc.b{border-color:var(--bronze)}.pc.b b{color:var(--bronze)}
+.pc.s{border-color:var(--silver)}.pc.s b{color:var(--silver)}
+.pc.g{border-color:var(--gold)}.pc.g b{color:var(--gold)}
+.pc.r{border-color:var(--gold);background:rgba(216,180,74,.12)}.pc.r b{color:var(--gold)}
+.pc.new:after{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:3px;background:var(--gold)}
+.dot{display:inline-block;width:8px;height:3px;background:var(--gold);vertical-align:middle;margin-right:8px}
+.mkt{border:1px solid var(--rule);background:var(--pitch-2)}
+.mkthead{border-bottom:1px solid var(--rule)}
+.mkthead b{color:var(--chalk);font-weight:400}
+.mtable{width:100%;border-collapse:collapse;font-size:13.5px}
+.mtable th{text-align:left;font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;padding:10px 16px;border-bottom:1px solid var(--rule)}
+.mtable td{padding:11px 16px;border-bottom:1px solid var(--rule);color:#b6c3bb}
+.mtable tr:last-child td{border-bottom:none}
+.mtable td:last-child{font-family:'Roboto Mono',monospace;color:var(--chalk)}
+.pill{display:inline-block;padding:2px 9px;font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.08em}
+.ps{border:1px solid var(--silver);color:var(--silver)}
+.pg{border:1px solid var(--gold);color:var(--gold)}
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:36px}
+.vs{background:var(--pitch-2);padding:26px 22px}
+.vs .big{font-family:Oswald,sans-serif;font-size:40px;font-weight:700;line-height:1;margin:10px 0 14px;text-transform:uppercase}
+.vs.a .big{color:var(--alert);text-decoration:line-through;text-decoration-thickness:2px}
+.vs.b .big{color:var(--gold)}
+.vs p{margin:0;font-size:14px;color:#b6c3bb}
+.vs.b{box-shadow:inset 3px 0 0 var(--gold)}
+@media(max-width:760px){.versus{grid-template-columns:1fr}}
+
+.ladder td:first-child{font-family:Oswald,sans-serif;font-size:20px;color:var(--gold);width:56px;text-align:center}
+.ladder td:last-child{color:var(--muted);font-size:13px;width:32%}
+.ladder tr.hot td{background:rgba(216,180,74,.08)}
+.ladder tr.hot td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
+.ladder tr.hot td b{color:var(--gold)}
+
+.pb{border:1px solid var(--bronze);color:var(--bronze)}
+.pr{border:1px solid var(--gold);color:var(--gold);background:rgba(216,180,74,.1)}
+.pt{border:1px solid var(--chalk);background:var(--chalk);color:var(--pitch);font-weight:500}
+.mtable tr.hot td{background:rgba(216,180,74,.07)}
+.mtable tr.hot td:first-child{box-shadow:inset 3px 0 0 var(--gold);color:var(--chalk)}
+
+@media(max-width:760px){.curve{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff;color:#111}
+  section,header{border-color:#ddd}
+  .problem div,.wk,.biz div{background:#f6f6f4;color:#111}
+  .pitchwrap,.mkt{background:#f6f6f4;border-color:#ddd}
+  .vs{background:#f6f6f4;color:#111}
+  .vs p{color:#333}
+  .fpitch{background:#fff}
+  .pc{background:#fff;border-color:#ccc}
+  .mtable td{color:#333}
+  .problem p,.wk ul,.pillar p,.biz p{color:#333}
+  h1{color:#111}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1><span class="sub">EA SPORTS FC 27 · Ultimate Team · Mode Concept</span>Hardcore</h1>
+  <p class="tagline">A permanent, opt-in Ultimate Team season where the power curve moves in <b>months, not hours</b>. Start on bronzes. Earn every rating. Make a 76 gold feel like a trophy again.</p>
+  <div class="meta">
+    <span>SEPARATE CLUB · SEPARATE MARKET</span>
+    <span>SEASON LENGTH: FULL CYCLE</span>
+    <span>AUDIENCE: RETURNING &amp; LAPSED UT PLAYERS</span>
+  </div>
+</header>
+
+<section>
+  <h2><span class="num">01</span>The problem</h2>
+  <p class="lede">Ultimate Team's content cadence has outrun the players it was built for. The result is a mode that punishes anyone with a job and bores anyone without one.</p>
+  <div class="problem">
+    <div><h3>The curve is unfollowable</h3><p>A promo every week. Ratings inflate faster than a working adult can grind. Fall two weeks behind and you're not competitive — you're irrelevant.</p></div>
+    <div><h3>Rewards stop mattering</h3><p>By November, a Weekend League pack is a coin flip that changes nothing. The reward ladder is disconnected from the squad you actually own.</p></div>
+    <div><h3>Every squad is the same squad</h3><p>The meta collapses to twenty cards. Ten thousand matches, one team. There's no identity in a club anyone can copy from a YouTube thumbnail.</p></div>
+    <div><h3>Progress has no ceiling to climb toward</h3><p>When you hit 91-rated in week three, the rest of the year is maintenance. Nothing is ahead of you. That's when people stop logging in.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span>The rule that makes it work</h2>
+  <p class="lede">Everything in Hardcore falls out of one constraint: <b>you cannot buy your way past the curve.</b> The store exists, FC Points work, and money still can't hand you a rare gold in week one.</p>
+  <table class="packs">
+    <thead><tr><th>Purchasable pack</th><th>Contents</th><th>Rares</th><th>Rating ceiling</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tier t-b"></span>Bronze</td><td>Standard bronze pool</td><td class="no">—</td><td>64</td></tr>
+      <tr><td><span class="tier t-s"></span>Silver</td><td>Standard silver pool</td><td class="no">—</td><td>74</td></tr>
+      <tr><td><span class="tier t-g"></span>Mixed — <i>new</i></td><td>Silver + gold, non-rare only</td><td class="no">0 rares</td><td>80</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:660px">Spend €500 on day one and you own a deep, well-chemistried, entirely non-rare squad. That's the point. Money buys you <i>depth and options</i>. It never buys you the curve.</p>
+  <p style="margin-top:16px;font-size:14.5px;color:#b6c3bb;max-width:660px"><b style="color:var(--chalk)">The market is live from day one</b> — but it can only ever contain what exists. In week one that means bronzes, silvers and non-rare golds, because nothing else has entered the world yet. You can trade, snipe, invest and build from the first hour; you just can't find a rare gold on it, for the simple reason that nobody has one. Rare golds, TOTW and specials enter the economy only through play, and when they arrive they stay genuinely expensive because supply is genuinely small.</p>
+</section>
+
+<section>
+  <h2><span class="num">03</span>What week one actually looks like</h2>
+  <p class="lede">Your club before the first Weekend League, and what's on the market while you build it.</p>
+
+  <div class="pitchwrap">
+    <div class="pitchhead"><span>Starting XI · 4-2-3-1</span><span>Chem 33 · Rating 68</span></div>
+    <div class="fpitch">
+      <div class="row"><div class="pc g"><b>78</b><span>ST</span><i>Non-rare gold</i></div></div>
+      <div class="row"><div class="pc s"><b>71</b><span>LW</span><i>Silver</i></div><div class="pc g"><b>75</b><span>CAM</span><i>Non-rare gold</i></div><div class="pc s"><b>70</b><span>RW</span><i>Silver</i></div></div>
+      <div class="row"><div class="pc s"><b>72</b><span>CM</span><i>Silver</i></div><div class="pc s"><b>69</b><span>CDM</span><i>Silver</i></div></div>
+      <div class="row"><div class="pc s"><b>68</b><span>LB</span><i>Silver</i></div><div class="pc s"><b>71</b><span>CB</span><i>Silver</i></div><div class="pc s"><b>70</b><span>CB</span><i>Silver</i></div><div class="pc b"><b>64</b><span>RB</span><i>Bronze</i></div></div>
+      <div class="row"><div class="pc s"><b>70</b><span>GK</span><i>Silver</i></div></div>
+    </div>
+    <div class="pitchfoot">No specials. No rares. Every card here is buyable, packable, or evolvable by anyone on day one.</div>
+  </div>
+
+  <h3 style="font-size:17px;margin:44px 0 6px">After Weekend League — 11–9 finish</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:660px">Three rare golds walk into the XI. This is what a single good week does to a club in Hardcore.</p>
+
+  <div class="pitchwrap">
+    <div class="pitchhead"><span>Starting XI · 4-2-3-1</span><span>Chem 33 · Rating 73 <em style="color:var(--gold);font-style:normal">▲ +5</em></span></div>
+    <div class="fpitch">
+      <div class="row"><div class="pc g"><b>78</b><span>ST</span><i>Non-rare gold</i></div></div>
+      <div class="row"><div class="pc s"><b>71</b><span>LW</span><i>Silver</i></div><div class="pc g"><b>75</b><span>CAM</span><i>Non-rare gold</i></div><div class="pc r new"><b>81</b><span>RW</span><i>Rare gold</i></div></div>
+      <div class="row"><div class="pc r new"><b>78</b><span>CM</span><i>Rare gold</i></div><div class="pc s"><b>69</b><span>CDM</span><i>Silver</i></div></div>
+      <div class="row"><div class="pc s"><b>68</b><span>LB</span><i>Silver</i></div><div class="pc s"><b>71</b><span>CB</span><i>Silver</i></div><div class="pc s"><b>70</b><span>CB</span><i>Silver</i></div><div class="pc r new"><b>76</b><span>RB</span><i>Rare gold</i></div></div>
+      <div class="row"><div class="pc s"><b>70</b><span>GK</span><i>Silver</i></div></div>
+    </div>
+    <div class="pitchfoot"><span class="dot"></span>New this week — from rewards, not the store. The 81 RW is now the best player you own.</div>
+  </div>
+
+  <h3 style="font-size:17px;margin:44px 0 6px">The market, week one</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:660px">Fully open, fully tradeable — and it can only contain what exists. Search "rare gold" in week one and the list is empty, because nobody in the world has packed one yet.</p>
+
+  <div class="mkt">
+    <div class="mkthead">
+      <div class="q">Quality: <b>Any</b> · Rarity: <b>Any</b> · Rating: <b>Any</b></div>
+      <div class="cnt">2,847 results</div>
+    </div>
+    <table class="mtable">
+      <thead><tr><th>Player</th><th>Rating</th><th>Rarity</th><th>BIN</th></tr></thead>
+      <tbody>
+        <tr><td>Silver CM · Bundesliga</td><td>73</td><td><span class="pill ps">Silver</span></td><td>1,200</td></tr>
+        <tr><td>Gold ST · Serie A</td><td>78</td><td><span class="pill pg">Non-rare gold</span></td><td>7,400</td></tr>
+        <tr><td>Gold CB · La Liga</td><td>76</td><td><span class="pill pg">Non-rare gold</span></td><td>3,900</td></tr>
+        <tr><td>Silver LW · Eredivisie</td><td>71</td><td><span class="pill ps">Silver</span></td><td>850</td></tr>
+        <tr><td>Gold GK · Eredivisie</td><td>76</td><td><span class="pill pg">Non-rare gold</span></td><td>1,600</td></tr>
+        <tr><td>Gold GK · Premier League</td><td>79</td><td><span class="pill pg">Non-rare gold</span></td><td>11,250</td></tr>
+        <tr><td>Bronze RB · EFL</td><td>64</td><td><span class="pill pb">Bronze</span></td><td>200</td></tr>
+      </tbody>
+    </table>
+    <div class="mktfoot">Highest-rated card listed: <b style="color:var(--gold)">80</b> · Rare golds available: <b style="color:var(--alert)">0</b> · Specials available: <b style="color:var(--alert)">0</b></div>
+  </div>
+
+  <h3 style="font-size:17px;margin:44px 0 6px">The market, week two</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:660px">The first Weekend League has paid out. Rares exist now — barely. This is what scarcity looks like when it's real: the same search, a handful of new cards, and prices that reflect how few of them are in the world.</p>
+
+  <div class="mkt">
+    <div class="mkthead">
+      <div class="q">Quality: <b>Any</b> · Rarity: <b>Any</b> · Rating: <b>Any</b></div>
+      <div class="cnt">3,104 results</div>
+    </div>
+    <table class="mtable">
+      <thead><tr><th>Player</th><th>Rating</th><th>Rarity</th><th>BIN</th></tr></thead>
+      <tbody>
+        <tr class="hot"><td>G. Simeone · TOTW · ST</td><td>81</td><td><span class="pill pt">TOTW</span></td><td>74,000</td></tr>
+        <tr><td>Rare Gold RW · Bundesliga</td><td>81</td><td><span class="pill pr">Rare gold</span></td><td>38,500</td></tr>
+        <tr><td>Rare Gold CM · Premier League</td><td>78</td><td><span class="pill pr">Rare gold</span></td><td>14,900</td></tr>
+        <tr><td>Gold GK · Premier League</td><td>79</td><td><span class="pill pg">Non-rare gold</span></td><td>11,250</td></tr>
+        <tr><td>Gold ST · Serie A</td><td>78</td><td><span class="pill pg">Non-rare gold</span></td><td>7,100</td></tr>
+        <tr><td>Silver CM · Bundesliga</td><td>73</td><td><span class="pill ps">Silver</span></td><td>1,150</td></tr>
+      </tbody>
+    </table>
+    <div class="mktfoot">Highest-rated card listed: <b style="color:var(--gold)">81</b> · TOTW listed on the entire market: <b style="color:var(--gold)">under 40</b> — an 81 striker costs more than most players will earn in a fortnight, and that is exactly the point.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Coins mean something again</h2>
+  <p class="lede">The most important number on that market screen isn't the ratings. It's the prices.</p>
+  <div style="max-width:700px">
+    <p style="font-size:16px;color:#cfd8d2;margin:0 0 20px">That 76-rated non-rare La Liga centre back costs 3,900 coins. That's roughly <b style="color:var(--gold)">10–15 games of Rivals</b>. Not a grind, not a second job — a couple of evenings after work. And at the end of it you own a card that is genuinely good in this meta, and a real, visible upgrade to your starting XI.</p>
+    <p style="font-size:16px;color:#cfd8d2;margin:0 0 20px">And there's a real ladder underneath it. A 76-rated keeper might go for 1,600 coins — a few games, and suddenly your XI is better. But he isn't the <i>best</i> keeper you could own, even this early. There are non-rare golds pushing 80 in the top leagues going for 10,000+, and those are a genuine target you have to work toward. So the upgrade you can afford tonight is real, and there's still something better sitting just out of reach. That gap is the mode.</p>
+    <p style="font-size:16px;color:#cfd8d2;margin:0 0 20px">That's the whole loop, and it's the one Ultimate Team was built on before the curve outran it. You play the game you already like playing. The coins add up — faster if you cash in spare fodder through an Exchange SBC for a coin boost. You watch a specific player you actually want get closer. You buy him. He makes your team better. Then you pick the next one.</p>
+    <p style="font-size:16px;color:#cfd8d2;margin:0">No promo required. No SBC to solve at 2am. No pack to open. Just the regular game, paying out in progress you can see — the way it was always meant to work. And an 81 TOTW sitting at 74,000 on that same market isn't a taunt. It's a destination.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">05</span>The curve</h2>
+  <p class="lede">Content unlocks on a schedule that a person with a job can actually keep pace with. Each bar is what a normal player's best XI looks like entering that stage.</p>
+  <div class="curve">
+    <div class="wk w1"><div class="bar"></div><div class="eyebrow">Weeks 1–2</div><ul>
+      <li>Starter club: bronzes, silvers, 1–2 non-rare golds</li>
+      <li><b>Market live from day one</b> — bronze, silver &amp; non-rare gold only</li>
+      <li>Only Bronze / Silver / Mixed packs on sale</li>
+      <li>TOTW exists but is <b>pack-luck or rank-1 only</b></li>
+      <li>No POTM. No promos. No player SBCs.</li>
+      <li>Marquee Matchups only</li>
+      <li>Objectives active — bronze &amp; silver player packs</li>
+      <li>Evos live from day one — bronze &amp; silver lines, tight caps</li>
+    </ul></div>
+    <div class="wk w2"><div class="bar"></div><div class="eyebrow">Weeks 2–4</div><ul>
+      <li>First rare golds circulate from WL rewards</li>
+      <li>Objective packs upgrade: non-rare gold guaranteed</li>
+      <li>Low-cost player SBCs appear (silver &amp; non-rare gold)</li>
+      <li>Market inventory widens as rares enter circulation</li>
+      <li>Evo caps rise — silver-to-gold conversions unlock</li>
+    </ul></div>
+    <div class="wk w3"><div class="bar"></div><div class="eyebrow">Weeks 4–10</div><ul>
+      <li>POTM introduced, one per league per month</li>      <li>Premium Gold packs enter the WL reward ladder</li>
+      <li>Evo lines unlock deeper rating caps</li>
+      <li><b>First promo lands</b> — a very slight stat boost, roughly TOTW-level at first</li>
+    </ul></div>
+    <div class="wk w4"><div class="bar"></div><div class="eyebrow">Weeks 10+</div><ul>
+      <li>Icons/Heroes reachable via long-form objectives — or from a regular gold pack, if you're insanely lucky</li>
+      <li>Promos go <b>bi-weekly</b> — boosts creep upward, slowly</li>
+      <li><b>TOTY is the first true event promo</b> — the year's big one</li>
+      <li>Top-end cards exist but remain market-scarce</li>
+      <li>Deepest Evo lines open — rare golds evolvable at last</li>
+      <li>Endgame squads are <b>earned records</b>, not purchases</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <p class="pull">Rewards that <span>last</span></p>
+  <p style="margin-top:28px;font-size:16px;color:#cfd8d2;max-width:700px">Every reward in Hardcore sits just above the squad you own, which means every reward changes your team. Not your bench — your <i>team</i>.</p>
+  <div class="pillars" style="margin-top:28px">
+    <div class="pillar"><h3>Rank 6, week one</h3><p>You pack a rare gold left back. Nothing special, nothing you'd screenshot in a normal year. In Hardcore he's a starter, he's an upgrade, and he's worth real coins if you'd rather sell him and rebuild elsewhere. A single rare card meaningfully moves your club.</p></div>
+    <div class="pillar"><h3>Rank 1, week one</h3><p>One guaranteed TOTW gold. Pull something like an 81-rated Simeone with mid-80s stats and you've won the week outright — that card leads your line for weeks, and he's worth a fortune on a market where almost nobody has an alternative. That's the ceiling, and it's earned.</p></div>
+  </div>
+  <p style="margin-top:28px;font-size:15px;color:#b6c3bb;max-width:700px">Compare that to the current game, where a rank-1 finish in November pays out a pack you redeem without looking. Here, finishing sixth is a story.</p>
+
+  <h3 style="font-size:17px;margin:44px 0 6px">Weekend League ladder — week one</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">Illustrative. Every rung pays something that changes your XI, and the gap between rungs is worth chasing. Note the ceiling: even rank 1 walks away with one special card, not five.</p>
+
+  <table class="packs ladder">
+    <thead><tr><th>Rank</th><th>Rewards</th><th>Best case</th></tr></thead>
+    <tbody>
+      <tr class="hot"><td>1</td><td><b>1× TOTW player (guaranteed)</b> + 3× Gold Player Pack (3 rares each)</td><td>An 81 special + up to 9 rare golds</td></tr>
+      <tr><td>2</td><td>3× Gold Player Pack (3 rares each) + 1× Premium Gold Pack</td><td>Up to 9 rare golds + squad items</td></tr>
+      <tr><td>3</td><td>2× Gold Player Pack (3 rares each) + 2× Premium Gold Pack</td><td>Up to 6 rare golds + consumables</td></tr>
+      <tr><td>4</td><td>2× Gold Player Pack (3 rares each) + 1× Mixed Pack</td><td>Up to 6 rare golds + depth</td></tr>
+      <tr><td>5</td><td>1× Gold Player Pack (3 rares) + 1× Gold Player Pack (2 rares) + 1× Premium Gold Pack</td><td>Up to 5 rare golds + squad items</td></tr>
+      <tr><td>6</td><td>1× Gold Player Pack (2 rares) + 1× Mixed Pack + 1× Silver Player Pack</td><td>Up to 2 rare golds + fodder</td></tr>
+      <tr><td>7</td><td>1× Gold Player Pack (1 rare) + 1× Premium Gold Pack</td><td>1 rare gold + squad items</td></tr>
+      <tr><td>8</td><td>1× Gold Player Pack (1 rare) + 1× Mixed Pack</td><td>1 rare gold + depth</td></tr>
+      <tr><td>9</td><td>1× Premium Gold Pack + 1× Mixed Pack + 1× Silver Player Pack</td><td>Chem, consumables &amp; fodder</td></tr>
+      <tr><td>10</td><td>1× Non-rare Gold Pack + 2× Silver Player Pack</td><td>Squad depth &amp; Evo fodder</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:700px">Not every reward is a player. Premium Gold packs bring chemistry items, consumables and tradeable squad fodder — things that still matter when your XI is silvers and your coins are tight. Rank 10 pays real depth and Evo fodder; rank 1 is a genuine prize without being a shortcut past the curve. Both dials — rare count and rating ceiling — climb week over week, so this same table pays more in week four than it does here.</p>
+
+  <div class="versus">
+    <div class="vs a">
+      <div class="eyebrow" style="color:var(--alert)">Ultimate Team today</div>
+      <div class="big">10 packs</div>
+      <p>Ten pack animations. Ten sets of fodder you'll never play, discard for coins you don't need, or leave rotting in your club. The dopamine hits ten times. Your team changes zero times.</p>
+    </div>
+    <div class="vs b">
+      <div class="eyebrow" style="color:var(--gold)">Hardcore</div>
+      <div class="big">3 packs</div>
+      <p>Three packs, each containing rare golds — a card type you own <b>none</b> of in week one. You open them slower. You care about every rare gold player. All three change your starting XI.</p>
+    </div>
+  </div>
+  <p style="margin-top:24px;font-size:15.5px;color:#cfd8d2;max-width:700px">This looks stingy on a spreadsheet. It isn't. Reward value was never pack count — it's whether the thing inside is something you didn't have and actually want. Ten packs of players you'll never field is a slot machine with the payout removed. Three packs that each hand you a starter is a reward.</p>
+</section>
+
+<section>
+  <h2><span class="num">06</span>Systems, retuned</h2>
+  <div class="pillars">
+    <div class="pillar"><h3>Evolutions — the long road</h3><p>Same system, hardcore tuning: more matches required, lower rating caps, tighter upgrade steps. Taking a silver you packed on day one and building him into a non-rare gold who's top-tier <i>in this meta</i> is a multi-week story. It's also the emotional centre of the mode — that card has your name on it. And the Evo ladder climbs with the mode: bronze and silver lines with tight caps in week one, silver-to-gold conversions by week two, rare golds evolvable only in the endgame.</p></div>
+    <div class="pillar"><h3>Exchange SBCs — fodder finally has a floor</h3><p>A new SBC type built on a <b>points system</b> rather than ratings and chemistry. Every card you own is worth points — a higher-rated silver more than a low one, a non-rare gold more again — and you turn in whatever you've got to hit a threshold. The reward isn't a pack: it's a <b>coin boost for your next 5 games</b>. It means the duplicate 74 silver you'd otherwise discard for 300 coins has a real, chosen use, and it converts squad clutter directly into the thing that actually moves you forward in this mode — coins. Higher thresholds unlock longer or larger boosts. And note what the reward <i>is</i>: a boost you can only cash in by going and playing matches. It pays you for playing football, not for sitting in the SBC menu solving puzzles at 2am. The current game rewards the menu grind; this rewards the game.</p></div>
+    <div class="pillar"><h3>SBCs — scaled down</h3><p>Marquee Matchups stay. Player SBCs are effectively absent for the first weeks and arrive small when they do. Foundations reward squad depth, not rating inflation. No 88-rated giveaway on day four.</p></div>
+    <div class="pillar"><h3>Objectives — the steady drip</h3><p>Still the reliable income. Silver player packs early, non-rare gold packs later, rare gold packs from week four. Predictable, plannable, and worth doing at every stage because the reward always sits just above your squad.</p></div>
+    <div class="pillar"><h3>Rivals — the escalating ladder</h3><p>Rivals rewards move on two dials that both climb week by week: the <b>rating ceiling</b> of what a pack can contain, and the <b>number of rares</b> inside it. Week one might be a non-rare gold pack capped at 78. By week four the same rank pays a 3-rare pack capped at 82. Same rank, same effort — the reward grows with the world around it, so the ladder never goes stale.</p></div>
+    <div class="pillar"><h3>Weekend League — the reason to play</h3><p>The whole mode is built to make WL matter again. Rewards are packs that meaningfully move your club, and the ladder improves slightly every week. Going in with silvers and three non-rare golds is chaotic, dynamic, and yours. No two squads look alike.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">07</span>Why it's good for EA</h2>
+  <div class="biz">
+    <div><h3>Retention over burnout</h3><p>The mode is designed so there's always something ahead. Players who quit in December quit because they finished. Hardcore never lets you finish early.</p></div>
+    <div><h3>Monetisation survives</h3><p>Mixed packs still sell — depth, chemistry, tradeable fodder and market currency all have value. The spend just converts into squad breadth instead of a rating shortcut.</p></div>
+    <div><h3>It wins back the lapsed</h3><p>This is the "it was better in FIFA 12" audience — a large, vocal, currently unserved group that is asking for exactly this in public, every week.</p></div>
+    <div><h3>A second audience, not a split one</h3><p>Hardcore doesn't cannibalise standard UT — it serves people who've already stopped playing it. Two curves, two audiences, one game.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">08</span>Standard Ultimate Team doesn't change</h2>
+  <p class="lede">Hardcore is additive. It's a separate mode with a separate club, running all year alongside the game you already ship — and it means every account now has two Ultimate Teams on it instead of one.</p>
+  <div class="pillars">
+    <div class="pillar"><h3>The dopamine mode stays exactly as it is</h3><p>Weekly full promos. Daily SBCs. Generous Evos. The full store. Everything you've built through FC 26 continues untouched, at the same cadence, for the players who want it — and there are millions of them. This proposal takes nothing away from them.</p></div>
+    <div class="pillar"><h3>Two markets, never merged</h3><p>Each mode runs its own transfer market with its own economy. Nothing crosses over — no cards, no coins, no fodder. A Hardcore market where the top card is an 80 only works if it's sealed, and standard UT's economy is completely unaffected by it.</p></div>
+    <div class="pillar"><h3>Separate matchmaking pools</h3><p>You never face a Hardcore squad in standard Rivals, and you never face a full-promo squad in Hardcore. Play both if you want — but the pools never touch, so neither mode's balance is ever compromised by the other's power curve.</p></div>
+    <div class="pillar"><h3>Two modes, one account — more to do, not less</h3><p>This is the part that's easy to miss: Hardcore doesn't divide a player's time, it doubles what's on the account. Finished your Hardcore objectives for the week? Go play standard UT. Burnt out on promo cadence? Go grind your silvers. Both clubs are yours, both progress persists, and neither one resets because you touched the other.</p></div>
+    <div class="pillar"><h3>It solves the fresh-account problem</h3><p>Right now, a bored FC 26 player's only move is to make a brand new account and start from nothing. Two weeks later they've hit the meta ceiling again and they're bored again — except now they've split their club, their coins, and their record across two accounts for nothing. Hardcore gives them the fresh start they were actually looking for, permanently, on the account they already care about.</p></div>
+    <div class="pillar"><h3>Opt-in, zero risk</h3><p>Players choose their mode. Nobody is forced onto a slower curve, and nobody who wants the slower curve has to leave the game to find it. If Hardcore underperforms, standard UT loses nothing. If it works, you've captured an audience that isn't playing at all right now.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">09</span>What it feels like</h2>
+  <p class="lede" style="max-width:720px;color:#cfd8d2;font-size:16.5px">Week one. Your squad is a Belgian silver keeper, a back four you've never heard of, and one non-rare gold striker you're weirdly attached to. You go 11–9.<br><br>Your rewards land as a handful of packs — a Premium Gold with three rares among them. Across all of them you walk away with three cards: a 76-rated Premier League right back, an 81-rated rare gold right winger, and a 78-rated rare central midfielder. Nothing special. No colours, no promo, nothing you'd screenshot in a normal year.<br><br>All three walk straight into your starting XI. The winger is now comfortably the best player you own and you'll build the next month around him. The right back plays every single game. You haven't seen a special card. You haven't seen Mbappé. And that's why you'll still be playing in March.</p>
+</section>
+
+<section style="border-bottom:none;padding-bottom:24px">
+  <h2><span class="num">10</span>Who's proposing this</h2>
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;max-width:760px">
+    <div style="font-family:Oswald,sans-serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.02em;border-right:2px solid var(--gold);padding-right:32px">3RNO</div>
+    <div>
+      <p style="margin:0 0 14px;font-size:15px;color:#cfd8d2">I'm a modding developer — DayZ among others — and a content creator. So I've spent years on both sides of this: building systems and shipping them to players, and then living with a game long enough to know exactly where it stops being fun to play or to make content about.</p>
+      <p style="margin:0;font-size:15px;color:#b6c3bb">I've played FIFA since 2004 and Ultimate Team since 2011. I've watched this mode become the best thing in football games, and I've watched what's happened to it since. This proposal isn't nostalgia — it's a design answer to a problem I've had a front-row seat for.</p>
+      <div class="meta" style="margin-top:22px"><span>FIFA SINCE 2004</span><span>ULTIMATE TEAM SINCE 2011</span><span>DEV &amp; CREATOR</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="padding:0">CONCEPT SUBMISSION · FC 27 ULTIMATE TEAM · "HARDCORE" · BY 3RNO</div>
+</footer>
+
+</div>
+</body>
+</html>
