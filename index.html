@@ -115,6 +115,49 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
 .pill{display:inline-block;padding:2px 9px;font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.08em}
 .ps{border:1px solid var(--silver);color:var(--silver)}
 .pg{border:1px solid var(--gold);color:var(--gold)}
+.squadcompare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.sqcol{background:var(--pitch-2)}
+.sqh{padding:20px 20px 16px;border-bottom:1px solid var(--rule);text-align:center}
+.sqnum{font-family:Oswald,sans-serif;font-size:48px;font-weight:700;line-height:1;margin:8px 0 12px;color:var(--muted)}
+.sqgrid{padding:22px 14px;display:flex;flex-direction:column;gap:12px;background:
+  repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 40px,transparent 40px 80px)}
+.line{display:flex;justify-content:center;gap:10px}
+.sc{width:60px;padding:8px 4px;text-align:center;border:1px solid var(--rule);background:rgba(0,0,0,.25)}
+.sc b{display:block;font-family:Oswald,sans-serif;font-size:19px;font-weight:600;line-height:1;color:var(--chalk)}
+.sc span{display:block;font-family:'Roboto Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--muted);margin-top:3px}
+.sc i{display:block;font-style:normal;font-family:'Roboto Mono',monospace;font-size:9px;color:var(--muted);margin-top:3px}
+.sc.up{border-color:var(--gold);background:rgba(216,180,74,.1)}
+.sc.up b{color:var(--gold)}
+.sc.up i{color:var(--gold)}
+.sqgrid.roles .sc{width:66px}
+.sqfoot{padding:16px 20px;font-size:12px;color:var(--muted);border-top:1px solid var(--rule)}
+.sqcol.peak{box-shadow:inset 3px 0 0 var(--gold)}
+
+.mcompare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.mcol{background:var(--pitch-2);padding:0}
+.mch{padding:20px 20px 18px;border-bottom:1px solid var(--rule);text-align:center}
+.mnum{font-family:Oswald,sans-serif;font-size:52px;font-weight:700;line-height:1;margin:8px 0 12px;color:var(--muted)}
+.mtag{display:inline-block;font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px}
+.lowtag{border:1px solid var(--muted);color:var(--muted)}
+.peaktag{border:1px solid var(--gold);color:var(--gold)}
+.mp{padding:14px 20px;border-bottom:1px solid var(--rule)}
+.mp b{display:block;font-family:Oswald,sans-serif;font-size:14px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.mp span{display:block;font-family:'Roboto Mono',monospace;font-size:13px;color:#b6c3bb;margin-bottom:3px}
+.mp span em{font-style:normal;color:var(--gold);font-weight:500}
+.mp i{font-style:normal;font-size:11px;color:var(--muted)}
+.mcol.peak .mp i{color:var(--gold)}
+.mfoot{padding:16px 20px;font-size:12px;color:var(--muted)}
+.mcol.peak{box-shadow:inset 3px 0 0 var(--gold)}
+
+.tiers{border:1px solid var(--rule);background:var(--pitch-2)}
+.tr{display:flex;align-items:center;gap:20px;padding:13px 18px;border-bottom:1px solid var(--rule);font-size:14px;color:#b6c3bb}
+.tr:last-child{border-bottom:none}
+.t-band{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;min-width:150px;text-align:center}
+.t-band.cold{border:1px solid var(--alert);color:var(--alert)}
+.t-band.low{border:1px solid var(--muted);color:var(--muted)}
+.t-band.set{border:1px solid var(--silver);color:var(--silver)}
+.t-band.high{border:1px solid var(--gold);color:var(--gold)}
+.t-band.peak{border:1px solid var(--gold);background:var(--gold);color:var(--pitch);font-weight:500}
 .versus{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:36px}
 .vs{background:var(--pitch-2);padding:26px 22px}
 .vs .big{font-family:Oswald,sans-serif;font-size:40px;font-weight:700;line-height:1;margin:10px 0 14px;text-transform:uppercase}
@@ -136,7 +179,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
 .mtable tr.hot td{background:rgba(216,180,74,.07)}
 .mtable tr.hot td:first-child{box-shadow:inset 3px 0 0 var(--gold);color:var(--chalk)}
 
-@media(max-width:760px){.curve{grid-template-columns:1fr}}
+@media(max-width:760px){.curve{grid-template-columns:1fr}.squadcompare,.mcompare{grid-template-columns:1fr}}
 @media print{
   body{background:#fff;color:#111}
   section,header{border-color:#ddd}
@@ -144,6 +187,15 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
   .pitchwrap,.mkt{background:#f6f6f4;border-color:#ddd}
   .vs{background:#f6f6f4;color:#111}
   .vs p{color:#333}
+  .tiers{background:#f6f6f4;border-color:#ddd}
+  .tr{color:#333}
+  .mcompare{border-color:#ddd}
+  .mcol{background:#f6f6f4}
+  .mp span{color:#333}
+  .squadcompare{border-color:#ddd}
+  .sqcol{background:#f6f6f4}
+  .sc{background:#fff;border-color:#ccc}
+  .sc b{color:#111}
   .fpitch{background:#fff}
   .pc{background:#fff;border-color:#ccc}
   .mtable td{color:#333}
@@ -157,10 +209,10 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
 
 <header>
   <h1><span class="sub">EA SPORTS FC 27 · Ultimate Team · Mode Concept</span>Hardcore</h1>
-  <p class="tagline">A permanent, opt-in Ultimate Team season where the power curve moves in <b>months, not hours</b>. Start on bronzes. Earn every rating. Make a 76 gold feel like a trophy again.</p>
+  <p class="tagline">A permanent, opt-in Ultimate Team season where the power curve moves in <b>months, not hours</b>. Start on bronzes. Earn every rating. Where the team you grind beats the team you buy — and a 76 gold feels like a trophy again.</p>
   <div class="meta">
     <span>SEPARATE CLUB · SEPARATE MARKET</span>
-    <span>SEASON LENGTH: FULL CYCLE</span>
+    <span>RUNS ALL YEAR · ALONGSIDE STANDARD UT</span>
     <span>AUDIENCE: RETURNING &amp; LAPSED UT PLAYERS</span>
   </div>
 </header>
@@ -187,7 +239,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
       <tr><td><span class="tier t-g"></span>Mixed — <i>new</i></td><td>Silver + gold, non-rare only</td><td class="no">0 rares</td><td>80</td></tr>
     </tbody>
   </table>
-  <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:660px">Spend €500 on day one and you own a deep, well-chemistried, entirely non-rare squad. That's the point. Money buys you <i>depth and options</i>. It never buys you the curve.</p>
+  <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:660px">Spend €500 on day one and you own a deep, well-linked, entirely non-rare squad. That's the point. Money buys you <i>depth and options</i>. It never buys you the curve.</p>
   <p style="margin-top:16px;font-size:14.5px;color:#b6c3bb;max-width:660px"><b style="color:var(--chalk)">The market is live from day one</b> — but it can only ever contain what exists. In week one that means bronzes, silvers and non-rare golds, because nothing else has entered the world yet. You can trade, snipe, invest and build from the first hour; you just can't find a rare gold on it, for the simple reason that nobody has one. Rare golds, TOTW and specials enter the economy only through play, and when they arrive they stay genuinely expensive because supply is genuinely small.</p>
 </section>
 
@@ -196,7 +248,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
   <p class="lede">Your club before the first Weekend League, and what's on the market while you build it.</p>
 
   <div class="pitchwrap">
-    <div class="pitchhead"><span>Starting XI · 4-2-3-1</span><span>Chem 33 · Rating 68</span></div>
+    <div class="pitchhead"><span>Starting XI · 4-2-3-1</span><span>Chem 14/33 · Rating 68</span></div>
     <div class="fpitch">
       <div class="row"><div class="pc g"><b>78</b><span>ST</span><i>Non-rare gold</i></div></div>
       <div class="row"><div class="pc s"><b>71</b><span>LW</span><i>Silver</i></div><div class="pc g"><b>75</b><span>CAM</span><i>Non-rare gold</i></div><div class="pc s"><b>70</b><span>RW</span><i>Silver</i></div></div>
@@ -211,7 +263,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
   <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:660px">Three rare golds walk into the XI. This is what a single good week does to a club in Hardcore.</p>
 
   <div class="pitchwrap">
-    <div class="pitchhead"><span>Starting XI · 4-2-3-1</span><span>Chem 33 · Rating 73 <em style="color:var(--gold);font-style:normal">▲ +5</em></span></div>
+    <div class="pitchhead"><span>Starting XI · 4-2-3-1</span><span>Chem 11/33 · Rating 73 <em style="color:var(--gold);font-style:normal">▲ +5</em></span></div>
     <div class="fpitch">
       <div class="row"><div class="pc g"><b>78</b><span>ST</span><i>Non-rare gold</i></div></div>
       <div class="row"><div class="pc s"><b>71</b><span>LW</span><i>Silver</i></div><div class="pc g"><b>75</b><span>CAM</span><i>Non-rare gold</i></div><div class="pc r new"><b>81</b><span>RW</span><i>Rare gold</i></div></div>
@@ -219,7 +271,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
       <div class="row"><div class="pc s"><b>68</b><span>LB</span><i>Silver</i></div><div class="pc s"><b>71</b><span>CB</span><i>Silver</i></div><div class="pc s"><b>70</b><span>CB</span><i>Silver</i></div><div class="pc r new"><b>76</b><span>RB</span><i>Rare gold</i></div></div>
       <div class="row"><div class="pc s"><b>70</b><span>GK</span><i>Silver</i></div></div>
     </div>
-    <div class="pitchfoot"><span class="dot"></span>New this week — from rewards, not the store. The 81 RW is now the best player you own.</div>
+    <div class="pitchfoot"><span class="dot"></span>New this week — from rewards, not the store. The 81 RW is now the best player you own — though three foreign signings nudge team chemistry down, a tradeoff you'll play back up (see §08).</div>
   </div>
 
   <h3 style="font-size:17px;margin:44px 0 6px">The market, week one</h3>
@@ -343,7 +395,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
       <tr><td>10</td><td>1× Non-rare Gold Pack + 2× Silver Player Pack</td><td>Squad depth &amp; Evo fodder</td></tr>
     </tbody>
   </table>
-  <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:700px">Not every reward is a player. Premium Gold packs bring chemistry items, consumables and tradeable squad fodder — things that still matter when your XI is silvers and your coins are tight. Rank 10 pays real depth and Evo fodder; rank 1 is a genuine prize without being a shortcut past the curve. Both dials — rare count and rating ceiling — climb week over week, so this same table pays more in week four than it does here.</p>
+  <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:700px">Not every reward is a player. Premium Gold packs bring Player Profiles, consumables and tradeable squad fodder — things that still matter when your XI is silvers and your coins are tight. Rank 10 pays real depth and Evo fodder; rank 1 is a genuine prize without being a shortcut past the curve. Both dials — rare count and rating ceiling — climb week over week, so this same table pays more in week four than it does here.</p>
 
   <div class="versus">
     <div class="vs a">
@@ -373,17 +425,196 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
 </section>
 
 <section>
-  <h2><span class="num">07</span>Why it's good for EA</h2>
+  <h2><span class="num">07</span>Team morale — rewarding the settled squad</h2>
+  <p class="lede">Morale returns, but reworked into the backbone of how a squad grows. It rewards the one thing the current game never does: playing the same team, game after game, until it clicks.</p>
+
+  <div class="pillars" style="margin-bottom:36px">
+    <div class="pillar"><h3>It's your form, tracked</h3><p>Morale is driven by results with the players actually on the pitch. A simple base: <b>win +2, draw +1, loss −1</b>, applied to every player who featured. Keep the same core XI and morale climbs; ship a losing streak and it cools. It's separate from chemistry — chemistry is about who links to whom, morale is about how long you've been grinding together.</p></div>
+    <div class="pillar"><h3>Swapping a player doesn't wreck it</h3><p>Team morale is the <i>average</i> of your eleven players' individual morale, so one change moves it gently, not catastrophically. A settled squad sitting at its 90 play ceiling that swaps in a fresh signing at the 40 baseline drops to ~85.5 — a small dip you play back up over a stretch of games, not a reset. Upgrading a card is never punished into pointlessness.</p></div>
+  </div>
+
+  <h3 style="font-size:17px;margin:0 0 6px">How the numbers work</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">Individual morale runs 0–100, not 0–10 — the wider scale is what lets one player's result move the team average by a sensible amount instead of a jarring one. <b>Playing earns you to 90</b>; the final <b>90→100 is the manager's</b> to give. So a settled squad tops out at a strong 90 on its own, and the last stretch to Peak is a deliberate managerial choice, not something that just accrues.</p>
+
+  <div class="mkt" style="margin-bottom:32px">
+    <table class="mtable">
+      <thead><tr><th>Event</th><th>Each featured player</th><th>Team morale (avg of 11)</th></tr></thead>
+      <tbody>
+        <tr><td>Squad settled, on a good run</td><td>earns up to 90</td><td>90 · play ceiling</td></tr>
+        <tr><td>Win</td><td>+2 individually (caps at 90)</td><td>+2</td></tr>
+        <tr><td>Draw</td><td>+1 individually</td><td>+1</td></tr>
+        <tr><td>Loss</td><td>−1 individually</td><td>−1</td></tr>
+        <tr><td>Swap in a new signing</td><td>enters at 40 baseline</td><td>90 → ~85.5</td></tr>
+        <tr class="hot"><td>Manager applied</td><td>grants the final +1 to +10</td><td>90 → up to 100 · Peak</td></tr>
+      </tbody>
+    </table>
+    <div class="mktfoot">Because team morale is the average, a player earning +2 on a win moves the team by +2 automatically — the two numbers stay in lockstep, which is the whole reason for the 0–100 scale.</div>
+  </div>
+
+  <h3 style="font-size:17px;margin:0 0 6px">The boost follows the position, not the playstyle</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">Morale doesn't touch playstyles at all — it lifts the stats that <b>matter for where a player stands</b>. Each position has its own boost profile: a <b>CAM</b> gains passing, vision and long shots; a <b>striker</b> gains finishing, heading, jumping and physicality; a <b>winger</b> gains pace, dribbling and agility; a <b>centre back</b> gains defending, heading and strength. High morale sharpens a player at the job his position asks of him — and if you want a different emphasis, you apply a <b>Player Profile</b> to override it.</p>
+
+  <div class="mkt" style="margin-bottom:32px">
+    <table class="mtable">
+      <thead><tr><th>Position</th><th>Stats morale boosts</th></tr></thead>
+      <tbody>
+        <tr><td>Striker</td><td>Finishing · Heading · Jumping · Physical</td></tr>
+        <tr><td>Winger</td><td>Pace · Dribbling · Agility · Crossing</td></tr>
+        <tr><td>CAM</td><td>Short/Long Passing · Vision · Long Shots</td></tr>
+        <tr><td>CM / CDM</td><td>Passing · Stamina · Defending · Physical</td></tr>
+        <tr><td>Full back</td><td>Pace · Stamina · Crossing · Defending</td></tr>
+        <tr><td>Centre back</td><td>Defending · Heading · Strength · Jumping</td></tr>
+        <tr><td>Goalkeeper</td><td>Reflexes · Positioning · Handling · Diving</td></tr>
+      </tbody>
+    </table>
+    <div class="mktfoot">Each player is boosted where it counts for his role — no wasted points on stats his position never uses. Applying a Player Profile overrides this with a custom emphasis instead.</div>
+  </div>
+
+  <div class="tiers">
+    <div class="tr"><span class="t-band cold">Cold · &lt;30</span><span>−1 to positional stats · out of form</span></div>
+    <div class="tr"><span class="t-band low">Low · 30–49</span><span>No bonus · stats as printed</span></div>
+    <div class="tr"><span class="t-band set">Settled · 50–69</span><span>+1 to positional stats</span></div>
+    <div class="tr"><span class="t-band high">High · 70–89</span><span>+2 to positional stats</span></div>
+    <div class="tr"><span class="t-band peak">Peak · 90–100</span><span>+3 to positional stats · 90 by play, 90–100 via manager</span></div>
+  </div>
+  <p style="margin:14px 0 0;font-size:13px;color:var(--muted);max-width:700px">Because the boost lands only on the stats a position uses rather than all six, a Peak +3 lifts a card's overall rating by up to +2, not +3 — the same way a basic Chemistry Style works in FC 26.</p>
+
+  <h3 style="font-size:17px;margin:40px 0 6px">The same squad, two morale states</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">An identical week-one XI — same cards, same ratings. The only difference is one has been played into the ground together and topped off by a manager; the other was just thrown together. This is what morale is worth.</p>
+
+  <div class="mcompare">
+    <div class="mcol low">
+      <div class="mch"><span class="eyebrow">Freshly assembled</span><div class="mnum">40</div><span class="mtag lowtag">Low · no bonus · stats as printed</span></div>
+      <div class="mp"><b>Silver ST · 78</b><span>SHO 74 · PAC 77 · PHY 72</span><i>Striker stats: base</i></div>
+      <div class="mp"><b>Gold CAM · 75</b><span>PAS 76 · DRI 75 · VIS 74</span><i>Playmaker stats: base</i></div>
+      <div class="mp"><b>Silver CM · 72</b><span>PAS 71 · DEF 68 · PHY 70</span><i>Midfield stats: base</i></div>
+      <div class="mfoot">Every stat as printed. Nothing sharpened. This is a team you assembled, not a team you built.</div>
+    </div>
+    <div class="mcol peak">
+      <div class="mch"><span class="eyebrow" style="color:var(--gold)">Grinded together + manager</span><div class="mnum" style="color:var(--gold)">100</div><span class="mtag peaktag">Peak · +3 positional stats</span></div>
+      <div class="mp"><b>Silver ST · 78</b><span>SHO <em>77</em> · PAC <em>80</em> · PHY <em>75</em></span><i>Striker stats: boosted</i></div>
+      <div class="mp"><b>Gold CAM · 75</b><span>PAS <em>79</em> · DRI <em>78</em> · VIS <em>77</em></span><i>Playmaker stats: boosted</i></div>
+      <div class="mp"><b>Silver CM · 72</b><span>PAS <em>74</em> · DEF <em>71</em> · PHY <em>73</em></span><i>Midfield stats: boosted</i></div>
+      <div class="mfoot">+3 to the stats each position uses, plus the Peak loyalty bonus on your 100-morale mainstays. The same silvers play a full tier above their card.</div>
+    </div>
+  </div>
+  <p style="margin-top:22px;font-size:15px;color:#cfd8d2;max-width:700px">That's the whole reason morale exists: a 78 striker you've kept and grinded outperforms a 78 striker you bought yesterday. Loyalty is a stat. It's also why swapping the meta pick in for your guy isn't automatically an upgrade — the card you know might already be better than the card you covet.</p>
+
+  <h3 style="font-size:17px;margin:40px 0 6px">The same XI, across the whole pitch</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">One identical week-one squad. Left, the day you assembled it. Right, after weeks together with a manager on top. Every position shifts.</p>
+
+  <div class="squadcompare">
+    <div class="sqcol low">
+      <div class="sqh"><span class="eyebrow">Freshly assembled</span><div class="sqnum">40</div><span class="mtag lowtag">Low · no bonus</span></div>
+      <div class="sqgrid">
+        <div class="line"><div class="sc"><b>78</b><span>ST</span></div></div>
+        <div class="line"><div class="sc"><b>71</b><span>LW</span></div><div class="sc"><b>75</b><span>CAM</span></div><div class="sc"><b>70</b><span>RW</span></div></div>
+        <div class="line"><div class="sc"><b>72</b><span>CM</span></div><div class="sc"><b>69</b><span>CDM</span></div></div>
+        <div class="line"><div class="sc"><b>68</b><span>LB</span></div><div class="sc"><b>71</b><span>CB</span></div><div class="sc"><b>70</b><span>CB</span></div><div class="sc"><b>64</b><span>RB</span></div></div>
+        <div class="line"><div class="sc"><b>70</b><span>GK</span></div></div>
+      </div>
+      <div class="sqfoot">Stats as printed, no positional boost. A collection of cards.</div>
+    </div>
+    <div class="sqcol peak">
+      <div class="sqh"><span class="eyebrow" style="color:var(--gold)">Grinded + manager</span><div class="sqnum" style="color:var(--gold)">100</div><span class="mtag peaktag">Peak · +3 positional</span></div>
+      <div class="sqgrid">
+        <div class="line"><div class="sc up"><b>80</b><span>ST</span></div></div>
+        <div class="line"><div class="sc up"><b>73</b><span>LW</span></div><div class="sc up"><b>77</b><span>CAM</span></div><div class="sc up"><b>72</b><span>RW</span></div></div>
+        <div class="line"><div class="sc up"><b>74</b><span>CM</span></div><div class="sc up"><b>71</b><span>CDM</span></div></div>
+        <div class="line"><div class="sc up"><b>70</b><span>LB</span></div><div class="sc up"><b>73</b><span>CB</span></div><div class="sc up"><b>72</b><span>CB</span></div><div class="sc up"><b>66</b><span>RB</span></div></div>
+        <div class="line"><div class="sc up"><b>72</b><span>GK</span></div></div>
+      </div>
+      <div class="sqfoot">+2 overall on each card from the positional boost. The same eleven cards, a full tier sharper.</div>
+    </div>
+  </div>
+
+  <div class="pillars" style="margin-top:36px">
+    <div class="pillar"><h3>Peak players reward loyalty twice</h3><p>Reaching a personal 100 takes both halves of the system — you grind a player to the 90 play ceiling, then a manager lifts him the final stretch. Hit it and he earns a small <b>loyalty bonus</b> on top of the stat boost — a mechanical thank-you for keeping the same man in the same shirt for weeks. That striker you refused to sell isn't just sentimental, he's statistically your best because of it.</p></div>
+    <div class="pillar"><h3>Chem Styles become Player Profiles</h3><p>A <b>Player Profile</b> is essentially what a Chemistry Style is in FC 26 today — the same idea of applying a card to shape a player's stats — only now it's <b>tied to the player's morale</b> rather than to chemistry. Applied to a card, it <b>replaces the positional morale boost entirely</b> with an emphasis you choose. Want your holding CDM to actually threaten from range? Apply a shooting Profile and he trades his default defensive lean for boosted finishing and long shots. It's the escape hatch from position defaults: most of the time you ride the morale you earned, but any card you want to build against type, you can. Applying a Profile removes the base boost and puts you in control of exactly which stats climb.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">08</span>Chemistry, reimagined — it drives roles, not stats</h2>
+  <p class="lede">Chemistry stays — team and player links, still maxing at 33, three per player, exactly as you know it. But it no longer touches a single stat. Morale owns stats now. Chemistry does something more interesting: it decides what a player is <b>allowed to do</b> on the pitch.</p>
+
+  <div class="pillars" style="margin-bottom:36px">
+    <div class="pillar"><h3>Chemistry unlocks roles</h3><p>Every player has a ladder of roles — Poacher, Poacher+, Poacher++ — and chemistry is the key, tier by tier. <b>1 chem</b> might unlock a single + role. <b>2 chem</b> opens both + roles, but no ++. Only at <b>full 3 chem</b> does a player reach his ++ ceiling. A card at zero is stuck on the base with no + or ++ at all. Chemistry is no longer a flat stat bump you barely notice — it's the difference between a striker who knows his job and one who doesn't.</p></div>
+    <div class="pillar"><h3>It models actually fitting in</h3><p>The fiction finally matches the mechanic. A player on zero chem <b>can't read his teammates</b> — wrong league, wrong nation, a manager he's never met. He doesn't know what the team expects of him, so he plays without instruction. Full chem means he's understood, settled, and playing the role he was built for.</p></div>
+  </div>
+
+  <div class="tiers" style="margin-bottom:36px">
+    <div class="tr"><span class="t-band cold">0 chem</span><span>Base role only · no + or ++ · plays without instruction</span></div>
+    <div class="tr"><span class="t-band set">1 chem</span><span>Unlocks one + role</span></div>
+    <div class="tr"><span class="t-band high">2 chem</span><span>Both + roles unlocked · still no ++</span></div>
+    <div class="tr"><span class="t-band peak">3 chem</span><span>Full ladder · ++ ceiling reached</span></div>
+  </div>
+
+  <h3 style="font-size:17px;margin:0 0 6px">The signing that doesn't fit — worked example</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">You finish Weekend League and pack João Pedro — a Chelsea, Brazil, Premier League forward. What he's worth to <i>your</i> squad depends entirely on the squad you already built.</p>
+
+  <div class="mcompare">
+    <div class="mcol low">
+      <div class="mch"><span class="eyebrow">Into a Bundesliga / Serie A squad</span><div class="mnum">0</div><span class="mtag lowtag">Zero chemistry · out of place</span></div>
+      <div class="mp"><b>João Pedro · ST</b><span>No Brazilians · no PL links · foreign manager</span><i>Roles available: base only</i></div>
+      <div class="mp"><b>Best role reachable here</b><span style="color:var(--muted)">Poacher (base)</span><i>No + or ++ unlocked</i></div>
+      <div class="mfoot">A world-class card playing like a stranger. He doesn't know the team, the team doesn't know him. The pack was exciting; the fit is zero.</div>
+    </div>
+    <div class="mcol peak">
+      <div class="mch"><span class="eyebrow" style="color:var(--gold)">Into a full Premier League squad</span><div class="mnum" style="color:var(--gold)">3</div><span class="mtag peaktag">Full chemistry · fully understood</span></div>
+      <div class="mp"><b>João Pedro · ST</b><span>PL club links · PL manager · settled spine</span><i>Roles available: all unlocked</i></div>
+      <div class="mp"><b>Best role reachable here</b><span style="color:var(--gold)">Poacher++</span><i>Top of his ladder</i></div>
+      <div class="mfoot">Same card, transformed. Full chem opens his best roles instantly — he slots in knowing exactly what's asked of him.</div>
+    </div>
+  </div>
+
+  <div class="pillars" style="margin-top:36px">
+    <div class="pillar"><h3>You can see it before you buy</h3><p>Every card shows its <b>maximum achievable roles</b> up front — and every card, <b>no matter its rating</b>, has at least one ++ role it can reach. A base card like João Pedro tops out at a single ++ even on full chem; the elite cards that arrive later — the Mbappés and Kanes — carry <b>multiple ++ roles</b>, which is a real part of what makes them worth chasing. A 74 silver has a ++ ceiling just like a gold does; the question is only whether your squad's chemistry lets him hit it. Before you spend 60k on a striker you already know exactly which roles he can reach in a team like yours — no more guessing, no more buyer's remorse. The market becomes a decision about fit, not just rating.</p></div>
+    <div class="pillar"><h3>Two systems, two jobs</h3><p>Clean separation: <b>morale drives stats</b> (how good the numbers are), <b>chemistry drives roles</b> (what the player is allowed to do). They never fight over the same lever, and together they reward the same behaviour — building a coherent squad and sticking with it — from two different directions.</p></div>
+  </div>
+
+  <h3 style="font-size:17px;margin:44px 0 6px">Both systems, one squad — the full picture</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">The same XI seen through both dials at once. Left: a scattershot squad, low chemistry and freshly assembled. Right: a coherent squad you've built and grinded — high chemistry, high morale. This is the gap the whole system is built around.</p>
+
+  <div class="squadcompare">
+    <div class="sqcol low">
+      <div class="sqh"><span class="eyebrow">Scattershot &amp; fresh</span><div class="sqnum">7<span style="font-size:22px;color:var(--muted)">/33</span></div><span class="mtag lowtag">Low chem · 40 morale</span></div>
+      <div class="sqgrid roles">
+        <div class="line"><div class="sc"><b>78</b><span>ST</span><i>base</i></div></div>
+        <div class="line"><div class="sc"><b>71</b><span>LW</span><i>base</i></div><div class="sc"><b>75</b><span>CAM</span><i>+</i></div><div class="sc"><b>70</b><span>RW</span><i>base</i></div></div>
+        <div class="line"><div class="sc"><b>72</b><span>CM</span><i>base</i></div><div class="sc"><b>69</b><span>CDM</span><i>+</i></div></div>
+        <div class="line"><div class="sc"><b>68</b><span>LB</span><i>base</i></div><div class="sc"><b>71</b><span>CB</span><i>base</i></div><div class="sc"><b>70</b><span>CB</span><i>+</i></div><div class="sc"><b>64</b><span>RB</span><i>base</i></div></div>
+        <div class="line"><div class="sc"><b>70</b><span>GK</span><i>base</i></div></div>
+      </div>
+      <div class="sqfoot">Stats flat, most players on base roles, no ++ anywhere. Good cards that don't know how to play together.</div>
+    </div>
+    <div class="sqcol peak">
+      <div class="sqh"><span class="eyebrow" style="color:var(--gold)">Coherent &amp; grinded</span><div class="sqnum" style="color:var(--gold)">33<span style="font-size:22px;color:var(--gold)">/33</span></div><span class="mtag peaktag">Full chem · 100 morale</span></div>
+      <div class="sqgrid roles">
+        <div class="line"><div class="sc up"><b>80</b><span>ST</span><i>++</i></div></div>
+        <div class="line"><div class="sc up"><b>73</b><span>LW</span><i>++</i></div><div class="sc up"><b>77</b><span>CAM</span><i>++</i></div><div class="sc up"><b>72</b><span>RW</span><i>++</i></div></div>
+        <div class="line"><div class="sc up"><b>74</b><span>CM</span><i>++</i></div><div class="sc up"><b>71</b><span>CDM</span><i>++</i></div></div>
+        <div class="line"><div class="sc up"><b>70</b><span>LB</span><i>++</i></div><div class="sc up"><b>73</b><span>CB</span><i>++</i></div><div class="sc up"><b>72</b><span>CB</span><i>++</i></div><div class="sc up"><b>66</b><span>RB</span><i>++</i></div></div>
+        <div class="line"><div class="sc up"><b>72</b><span>GK</span><i>++</i></div></div>
+      </div>
+      <div class="sqfoot">Positional boost applied and every player on his ++ role. The same eleven cards playing as a team that has been together for weeks.</div>
+    </div>
+  </div>
+  <p style="margin-top:22px;font-size:15px;color:#cfd8d2;max-width:700px">Neither squad packed better cards than the other — they're identical. The entire difference is coherence and time. That's a power curve you climb by playing, not by paying.</p>
+</section>
+
+<section>
+  <h2><span class="num">09</span>Why it's good for EA</h2>
   <div class="biz">
     <div><h3>Retention over burnout</h3><p>The mode is designed so there's always something ahead. Players who quit in December quit because they finished. Hardcore never lets you finish early.</p></div>
-    <div><h3>Monetisation survives</h3><p>Mixed packs still sell — depth, chemistry, tradeable fodder and market currency all have value. The spend just converts into squad breadth instead of a rating shortcut.</p></div>
+    <div><h3>Monetisation survives</h3><p>Mixed packs still sell — depth, squad links, tradeable fodder and market currency all have value. The spend just converts into squad breadth instead of a rating shortcut.</p></div>
     <div><h3>It wins back the lapsed</h3><p>This is the "it was better in FIFA 12" audience — a large, vocal, currently unserved group that is asking for exactly this in public, every week.</p></div>
     <div><h3>A second audience, not a split one</h3><p>Hardcore doesn't cannibalise standard UT — it serves people who've already stopped playing it. Two curves, two audiences, one game.</p></div>
   </div>
 </section>
 
 <section>
-  <h2><span class="num">08</span>Standard Ultimate Team doesn't change</h2>
+  <h2><span class="num">10</span>Standard Ultimate Team doesn't change</h2>
   <p class="lede">Hardcore is additive. It's a separate mode with a separate club, running all year alongside the game you already ship — and it means every account now has two Ultimate Teams on it instead of one.</p>
   <div class="pillars">
     <div class="pillar"><h3>The dopamine mode stays exactly as it is</h3><p>Weekly full promos. Daily SBCs. Generous Evos. The full store. Everything you've built through FC 26 continues untouched, at the same cadence, for the players who want it — and there are millions of them. This proposal takes nothing away from them.</p></div>
@@ -396,12 +627,12 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
 </section>
 
 <section>
-  <h2><span class="num">09</span>What it feels like</h2>
+  <h2><span class="num">11</span>What it feels like</h2>
   <p class="lede" style="max-width:720px;color:#cfd8d2;font-size:16.5px">Week one. Your squad is a Belgian silver keeper, a back four you've never heard of, and one non-rare gold striker you're weirdly attached to. You go 11–9.<br><br>Your rewards land as a handful of packs — a Premium Gold with three rares among them. Across all of them you walk away with three cards: a 76-rated Premier League right back, an 81-rated rare gold right winger, and a 78-rated rare central midfielder. Nothing special. No colours, no promo, nothing you'd screenshot in a normal year.<br><br>All three walk straight into your starting XI. The winger is now comfortably the best player you own and you'll build the next month around him. The right back plays every single game. You haven't seen a special card. You haven't seen Mbappé. And that's why you'll still be playing in March.</p>
 </section>
 
 <section style="border-bottom:none;padding-bottom:24px">
-  <h2><span class="num">10</span>Who's proposing this</h2>
+  <h2><span class="num">12</span>Who's proposing this</h2>
   <div style="display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;max-width:760px">
     <div style="font-family:Oswald,sans-serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;letter-spacing:.02em;border-right:2px solid var(--gold);padding-right:32px">3RNO</div>
     <div>
