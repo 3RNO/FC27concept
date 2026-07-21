@@ -167,6 +167,11 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
 .vs.b{box-shadow:inset 3px 0 0 var(--gold)}
 @media(max-width:760px){.versus{grid-template-columns:1fr}}
 
+.compare2 td{width:50%;vertical-align:top}
+.compare2 td:last-child{box-shadow:inset 3px 0 0 var(--gold)}
+.compare2 td:last-child b{color:var(--gold)}
+.compare2 td:first-child{color:var(--muted)}
+
 .ladder td:first-child{font-family:Oswald,sans-serif;font-size:20px;color:var(--gold);width:56px;text-align:center}
 .ladder td:last-child{color:var(--muted);font-size:13px;width:32%}
 .ladder tr.hot td{background:rgba(216,180,74,.08)}
@@ -176,6 +181,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
 .pb{border:1px solid var(--bronze);color:var(--bronze)}
 .pr{border:1px solid var(--gold);color:var(--gold);background:rgba(216,180,74,.1)}
 .pt{border:1px solid var(--chalk);background:var(--chalk);color:var(--pitch);font-weight:500}
+.pst{border:1px solid var(--silver);background:var(--silver);color:var(--pitch);font-weight:500}
 .mtable tr.hot td{background:rgba(216,180,74,.07)}
 .mtable tr.hot td:first-child{box-shadow:inset 3px 0 0 var(--gold);color:var(--chalk)}
 
@@ -325,6 +331,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
       <thead><tr><th>Player</th><th>Rating</th><th>Rarity</th><th>BIN</th></tr></thead>
       <tbody>
         <tr class="hot"><td>G. Simeone · TOTW · ST</td><td>81</td><td><span class="pill pt">TOTW</span></td><td>74,000</td></tr>
+        <tr class="hot"><td>Silver TOTW · CM</td><td>74</td><td><span class="pill pst">Silver TOTW</span></td><td>24,000</td></tr>
         <tr><td>Rare Gold RW · Bundesliga</td><td>81</td><td><span class="pill pr">Rare gold</span></td><td>38,500</td></tr>
         <tr><td>Rare Gold CM · Premier League</td><td>78</td><td><span class="pill pr">Rare gold</span></td><td>14,900</td></tr>
         <tr><td>Gold GK · Premier League</td><td>79</td><td><span class="pill pg">Non-rare gold</span></td><td>11,250</td></tr>
@@ -332,7 +339,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
         <tr><td>Silver CM · Bundesliga</td><td>73</td><td><span class="pill ps">Silver</span></td><td>1,150</td></tr>
       </tbody>
     </table>
-    <div class="mktfoot">Highest-rated card listed: <b style="color:var(--gold)">81</b> · TOTW listed on the entire market: <b style="color:var(--gold)">under 40</b> — an 81 striker costs more than most players will earn in a fortnight, and that is exactly the point.</div>
+    <div class="mktfoot">Highest-rated card listed: <b style="color:var(--gold)">81</b> · Gold TOTW on the entire market: <b style="color:var(--gold)">under 40</b> — but Silver TOTWs pack far more consistently, so a 74 special at 24k is a realistic early-game target, not a fantasy. That's the FIFA 12 chase, back again.</div>
   </div>
 </section>
 
@@ -343,6 +350,7 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
   <div class="pillars" style="margin-bottom:36px">
     <div class="pillar"><h3>Rating scales with the performance — and so does scarcity</h3><p>A Haaland hattrick puts a high-rated Haaland in the TOTW. But in week one, with almost no rare golds in circulation, a card like that is <b>brutally hard to get</b> — you're not buying him on a market that has maybe a handful of TOTWs total. Realistically he comes from finishing high in Weekend League, or a pack miracle. The bigger the real-world performance, the rarer and more coveted the card.</p></div>
     <div class="pillar"><h3>The boost is performance-shaped, not meta-shaped</h3><p>The upgrade lands on <b>whatever the player did</b>, even when that's off-meta. Two of Haaland's three goals were headers? His playstyle+ shifts to <b>Power Header / Aerial</b> and his heading and physical climb — regardless of whether aerial play is fashionable. And the size of the boost scales <i>inversely</i> with the base stat: an already-elite 91 shooting only nudges up a point or two, while a midfielder's mediocre shooting can leap far higher. The card is a record of a real match, not a min-maxed template.</p></div>
+    <div class="pillar"><h3>Silver TOTWs are back</h3><p>Not every Team of the Week is a gold. A standout performer from a silver-tier player enters the TOTW as a <b>Silver Special</b> — which means even in the early weeks, when gold TOTWs are almost unreachable, you can pack a genuinely exciting card. This is the FIFA 12 feeling, restored: chasing a silver TOTW that outperforms its rating. Picture a promo like FC 26's World Tour silvers dropped into this mode — in a world where your whole squad is silver, that event finally makes complete sense instead of being a novelty.</p></div>
   </div>
 
   <h3 style="font-size:17px;margin:0 0 6px">Two TOTWs, two very different stories</h3>
@@ -443,6 +451,20 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
   </table>
   <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:700px">Not every reward is a player. Premium Gold packs bring Player Profiles, consumables and tradeable squad fodder — things that still matter when your XI is silvers and your coins are tight. Rank 10 pays real depth and Evo fodder; rank 1 is a genuine prize without being a shortcut past the curve. Both dials — rare count and rating ceiling — climb week over week, so this same table pays more in week four than it does here.</p>
 
+  <h3 style="font-size:17px;margin:44px 0 6px">The same rank, one month later — the curve in motion</h3>
+  <p style="margin:0 0 20px;font-size:14.5px;color:var(--muted);max-width:700px">By now most active players are running full rare-gold squads, so the reward ladder has climbed to match. Here's what a rank-1 finish pays four weeks in — same effort, a completely different haul, because the whole world moved up together.</p>
+
+  <table class="packs compare2">
+    <thead><tr><th>Rank 1 · week one</th><th>Rank 1 · one month in</th></tr></thead>
+    <tbody>
+      <tr><td>1× TOTW player (guaranteed)</td><td><b>1× TOTW player 81+</b> (guaranteed)</td></tr>
+      <tr><td>3× Gold Player Pack (3 rares each)</td><td><b>2× 82×5</b> (five 82+ picks)</td></tr>
+      <tr><td>—</td><td><b>2× Player Pick</b> — choose one rare gold 82+</td></tr>
+      <tr><td>—</td><td><b>2× Premium Gold Player Pack</b></td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:20px;font-size:14.5px;color:#b6c3bb;max-width:700px">The rating floor on rewards has jumped from "any rare gold" to "82+," and player picks — letting you choose the exact card — appear only once the economy can support them. A player who sees this a month in understands the mode viscerally: the ladder they're climbing keeps extending upward, and the rewards grow to meet them the whole way.</p>
+
   <div class="versus">
     <div class="vs a">
       <div class="eyebrow" style="color:var(--alert)">Ultimate Team today</div>
@@ -451,11 +473,11 @@ footer{padding:44px 0 72px;font-family:'Roboto Mono',monospace;font-size:12px;co
     </div>
     <div class="vs b">
       <div class="eyebrow" style="color:var(--gold)">Hardcore</div>
-      <div class="big">3 packs</div>
-      <p>Three packs, each containing rare golds — a card type you own <b>none</b> of in week one. You open them slower. You care about every rare gold player. All three change your starting XI.</p>
+      <div class="big">5 packs</div>
+      <p>Five packs, each containing rare golds — a card type you own <b>none</b> of in week one. You open them slower. You care about every rare gold player. All five change your starting XI.</p>
     </div>
   </div>
-  <p style="margin-top:24px;font-size:15.5px;color:#cfd8d2;max-width:700px">This looks stingy on a spreadsheet. It isn't. Reward value was never pack count — it's whether the thing inside is something you didn't have and actually want. Ten packs of players you'll never field is a slot machine with the payout removed. Three packs that each hand you a starter is a reward.</p>
+  <p style="margin-top:24px;font-size:15.5px;color:#cfd8d2;max-width:700px">This looks stingy on a spreadsheet. It isn't. Reward value was never pack count — it's whether the thing inside is something you didn't have and actually want. Ten packs of players you'll never field is a slot machine with the payout removed. Five packs that each hand you a starter is a reward.</p>
 </section>
 
 <section>
